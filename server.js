@@ -4,6 +4,11 @@ const path = require('path');
 
 const app = express();
 
+// server.js
+const cors = require('cors');
+app.use(cors());
+/* server configuration here */
+
 // Serve only the static files form the dist directory
 app.use(express.static('./dist/flizzerchatUI22'));
 
