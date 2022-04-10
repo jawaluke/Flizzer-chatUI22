@@ -5,10 +5,10 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static('./dist/flizzerchat-ui22'));
+app.use(express.static('./dist/flizzerchatUI22'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: '/dist/flizzerchat-ui22/'}),
+    res.sendFile('index.html', {root: '/dist/flizzerchatUI22/'}),
 );
 
 // Start the app by listening on the default Heroku port
