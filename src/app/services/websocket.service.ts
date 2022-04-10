@@ -13,7 +13,7 @@ export class WebsocketService {
   constructor() { }
 
   public connect() {
-    let socket = new SockJS('http://flizzer-java-lakshmanan.herokuapp.com/user/chatSocket', { transports: ['websocket', 'polling', 'flashsocket'] });
+    let socket = new SockJS('https://flizzer-lakshmanan-ui.herokuapp.com/https://flizzer-java-lakshmanan.herokuapp.com/user/chatSocket', { transports: ['websocket', 'polling', 'flashsocket'] });
 
     let stompClient = Stomp.over(socket);
 
