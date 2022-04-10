@@ -1,0 +1,12 @@
+<div class="card">
+
+    <p-listbox class="surface-overlay" [options]="userList" [(ngModel)]="selectedUser" [metaKeySelection]="false" [filter]="true" [checkbox]="true" [listStyle]="{'height': '90vh','overflow-y': 'auto','overflow-x': 'hidden','background': '#343a40'}" [style]="{'width':'15rem'}" (click)="whichUser()">
+        <ng-template let-user pTemplate="item">
+            <div class="country-item">
+                <h3>{{user.userName}}</h3>
+            </div>
+        </ng-template>
+    </p-listbox>
+
+    
+</div>

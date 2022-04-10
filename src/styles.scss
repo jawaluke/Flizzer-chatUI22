@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@ctrl/ngx-emoji-mart/picker';
+
+h1,h2,h3,h4,h5,h6,h7{
+    color: white;
+}
+
+body{background-color: black;}
+
+.p-listbox {
+    background: rgb(34, 14, 14);
+}
+
+.p-listbox .p-listbox-list .p-listbox-item.p-highlight{
+    background: #2196f3;
+}
+
+html {
+    overflow-x: hidden;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

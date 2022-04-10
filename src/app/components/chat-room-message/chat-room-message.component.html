@@ -1,0 +1,50 @@
+<div class="card overflow-auto surface-overlay" style="height: 66vh">
+   
+    <div class="card">
+        <div class="card-container blue-container">
+
+
+            <div *ngFor="let msg of userMessage">
+
+                    <!-------------- SENDER MSG ------------------------>
+                    
+                        <div class="talk-bubble-red round" *ngIf="msg.sender!=userName else notSenderMsg">
+                            
+                            <div *ngIf="msg.messageTag=='NONE'; else notNormalMessage">
+                                        <div class="receivedMsg mx-6 w-17rem max-w-20rem h-auto font-bold text-center border-round p-2 mb-3">
+                                            {{msg.message}}
+                                        </div>
+                                        <div class="text-center text-xs text-50">{{msg.times}}</div>
+                                    </div>
+                            
+
+                                    <ng-template #notNormalMessage>
+                                        <div class="talk-bubble-red round" *ngIf="msg.sender!=userName else notSenderMsg">
+                                            <div class="receivedMsg mx-6 w-17rem max-w-20rem h-auto font-bold text-center border-round p-2 mb-3">
+                                                Incoming Video Call : {{msg.message}}
+                                            </div>
+                                            <button (click)="videoCallAccept(msg.message)">Accept</button>
+                                            <div class="text-center text-xs text-50">{{msg.times}}</div>
+                                        </div>
+                                    </ng-template>
+
+                        </div>
+                            
+                    <!----------------RECEIVER MSG----------------------->
+                    <ng-template #notSenderMsg>
+                            <div class="receivedMsg flex justify-content-center bg-blue-500 ml-auto mr-6 w-17rem max-w-20rem h-auto font-bold text-center border-round p-2 block">{{ msg.message}}</div>
+                            <div class="receivedMsg flex justify-content-center bg-blue-500 ml-auto mr-6 w-17rem max-w-20rem h-auto font-bold text-xs text-50 block white-space-normal mb-3">{{msg.times}}</div>
+                    </ng-template>
+                    
+
+            </div>
+
+            
+            
+            
+
+
+            
+        </div>
+    </div>
+</div>

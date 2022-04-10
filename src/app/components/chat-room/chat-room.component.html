@@ -1,0 +1,41 @@
+
+<div *ngIf="videoCallOnOrOff=='On'; else videoOff">
+    <router-outlet></router-outlet>
+</div>
+
+
+<ng-template #videoOff>
+
+                        <!--- IF BLOCK WHEN SELECTED USER != DEFAULT  -->
+                <div *ngIf="whichUserChatHome!='Default' && whichUserChatHome!=null; else loggedOut">
+
+                <div class="" style="height: 14vh">
+                    <div class="col">
+                        <app-chat-room-header></app-chat-room-header>
+                    </div>    
+                </div>
+
+                <div style="height: 72vh">
+                    <div class="col">
+                        <app-chat-room-message></app-chat-room-message>
+                    </div>    
+                </div>
+
+                <div class="" style="height: 12vh">
+                    <div class="col">
+                        <app-chat-room-keyboard></app-chat-room-keyboard>
+                    </div>    
+                </div>
+                </div>
+
+                <!--- ELSE BLOCK FOR SELECTED USER == DEFAULT -->
+                <ng-template #loggedOut>
+                <div class="flex justify-content-center">
+                <i class="pi pi-comments" style="font-size: 25rem"></i>
+                </div>
+                </ng-template>
+
+
+</ng-template>
+
+

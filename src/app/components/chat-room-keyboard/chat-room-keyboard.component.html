@@ -1,0 +1,17 @@
+<!-- <div class="sizes">
+    <input type="text" class="p-inputtext-lg" placeholder="Large"  pInputText />
+</div> -->
+
+<div class="input-group ">
+   
+        <input type="text" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Type your message.." [(ngModel)]="typedUserMessage" pInputText>
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="sendUserTypedMessage()" style="color:white">Send</button>
+        </div>
+    
+        <button (click)="isEmojiPickerVisible = !isEmojiPickerVisible;">😀</button>
+        
+
+</div>
+<emoji-mart class="emoji-mart" *ngIf="isEmojiPickerVisible" (emojiSelect)="addEmoji($event)" title="Choose your emoji"></emoji-mart>
+    
