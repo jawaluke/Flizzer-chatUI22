@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('./dist/flizzerchat-ui22'));
 
 app.get('/*', (req, res) =>
-    res.sendFile('index.html', {root: 'dist/flizzerchat-ui22/'}),
+    res.sendFile('index.html', {root: '/dist/flizzerchat-ui22/'}),
 );
 
 // Start the app by listening on the default Heroku port
