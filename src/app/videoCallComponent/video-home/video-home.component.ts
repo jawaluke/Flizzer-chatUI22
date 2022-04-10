@@ -98,6 +98,7 @@ export class VideoHomeComponent implements OnInit, OnDestroy {
 
   public endCall() {
     this.chatUserService.changeVideoCallOnOrOff('Off');
+    this.chatUserService.changeVideoCallSenderOrReceiver("none");
     this.callService.closeMediaCall();
   }
 }
