@@ -8,23 +8,24 @@
 
                     <!-------------- SENDER MSG ------------------------>
                     
-                        <div class="talk-bubble-red round" *ngIf="msg.sender!=userName else notSenderMsg">
+                        <div *ngIf="msg.sender!=userName else notSenderMsg">
                             
                             <div *ngIf="msg.messageTag=='NONE'; else notNormalMessage">
-                                        <div class="receivedMsg mx-6 w-17rem max-w-20rem h-auto font-bold text-center border-round p-2 mb-3">
+                                        <div class="receivedMsg text-300 bg-pink-600 mx-6 w-17rem max-w-20rem h-auto font-bold text-center border-round p-2 mb-3">
                                             {{msg.message}}
-                                        </div>
-                                        <div class="text-center text-xs text-50">{{msg.times}}</div>
+                                        <div class="text-center text-xs text-50 text-black-alpha-70">{{msg.times}}</div>
+                                    </div>
                                     </div>
                             
 
                                     <ng-template #notNormalMessage>
-                                        <div class="talk-bubble-red round" *ngIf="msg.sender!=userName else notSenderMsg">
-                                            <div class="receivedMsg mx-6 w-17rem max-w-20rem h-auto font-bold text-center border-round p-2 mb-3">
+                                        <div *ngIf="msg.sender!=userName else notSenderMsg">
+                                            <div class="receivedMsg text-300 bg-pink-600 mx-6 w-17rem max-w-20rem h-auto font-bold text-center border-round p-2 mb-3">
                                                 Incoming Video Call : {{msg.message}}
-                                            </div>
+                                            <br>
                                             <button (click)="videoCallAccept(msg.message)">Accept</button>
-                                            <div class="text-center text-xs text-50">{{msg.times}}</div>
+                                            <div class="text-center text-xs text-50 text-black-alpha-70">{{msg.times}}</div>
+                                        </div>
                                         </div>
                                     </ng-template>
 
@@ -32,8 +33,8 @@
                             
                     <!----------------RECEIVER MSG----------------------->
                     <ng-template #notSenderMsg>
-                            <div class="receivedMsg flex justify-content-center bg-blue-500 ml-auto mr-6 w-17rem max-w-20rem h-auto font-bold text-center border-round p-2 block">{{ msg.message}}</div>
-                            <div class="receivedMsg flex justify-content-center bg-blue-500 ml-auto mr-6 w-17rem max-w-20rem h-auto font-bold text-xs text-50 block white-space-normal mb-3">{{msg.times}}</div>
+                            <div class="receivedMsg flex justify-content-center bg-blue-500 ml-auto mr-6 w-17rem max-w-20rem h-auto font-bold text-center border-round p-2 block text-300">{{ msg.message}}</div>
+                            <div class="receivedMsg flex justify-content-center bg-blue-500 ml-auto mr-6 w-17rem max-w-20rem h-auto font-bold text-xs text-50 block white-space-normal mb-3 text-black-alpha-70">{{msg.times}}</div>
                     </ng-template>
                     
 

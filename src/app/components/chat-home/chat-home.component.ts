@@ -15,10 +15,15 @@ export class ChatHomeComponent implements OnInit, OnDestroy {
   videoCallOnOrOff!: String;
   exit!: boolean;
   private unsubscribe$: Subject<any> = new Subject<any>();
+  isMobileResolution!: boolean;
 
   constructor(private chatuserService: ChatUserService) { 
-    this.videoCallOnOrOff = "Off"
-
+    this.videoCallOnOrOff = "Off";
+    if (window.innerWidth < 768) {
+      this.isMobileResolution = true;
+    } else {
+      this.isMobileResolution = false;
+    }
   }
 
   ngOnInit(): void {
